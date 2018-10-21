@@ -7,4 +7,7 @@ eureka:  client:    service-url:      defaultZone: http://localhost:8787/eure
 zuul:  routes:    proxy:
       path: /p/**
       serviceId: proxy
+    catalog:
+      path: /catalog/**
+      serviceId: catalog
      

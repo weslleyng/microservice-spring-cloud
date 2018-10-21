@@ -1,12 +1,9 @@
-package br.org.service;
-
-import java.util.UUID;
+package br.org.service.catalog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,22 +11,21 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@RestController
 @EnableSwagger2
-public class WsProxyApplication {
+@RestController
+public class WsCatalogApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WsProxyApplication.class, args);
+		SpringApplication.run(WsCatalogApplication.class, args);
 	}
 	
-	@GetMapping(value = "/")
-	public String test() {
-		return "teste passou";
+	
+	
+	@GetMapping(value = "list")
+	public String[] getlist() {
+		
+		return new String[]{"Item 1","Item 2"};
 	}
 
 	
-	@GetMapping(value = "/test")
-	public String testString() {
-		return "String da sorte? \n\rSorte: "+UUID.randomUUID().toString();
-	}
 }
