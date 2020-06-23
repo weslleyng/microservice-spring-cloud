@@ -1,2 +1,2 @@
 # microservice-spring-cloud
-Projetos basedos em microserviços escalaveis verticalmente
+Projetos basedos em microserviços escalaveis
